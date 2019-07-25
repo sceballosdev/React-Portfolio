@@ -24,14 +24,14 @@ class Landing extends Component {
 
                             <div className="social-links">
 
-                                {/* LinkedIn */}
-                                <a href="http://google.com" rel="noopener noreferrer" target="_blank">
-                                    <i className="fa fa-linkedin-square" aria-hidden="true"/>
+                                {/* Github */}
+                                <a href="https://github.com/sceballosdev" rel="noopener noreferrer" target="_blank">
+                                    <i className="fa fa-github-square" aria-hidden="true"/>
                                 </a>
 
-                                {/* Github */}
-                                <a href="http://google.com" rel="noopener noreferrer" target="_blank">
-                                    <i className="fa fa-github-square" aria-hidden="true"/>
+                                {/* LinkedIn */}
+                                <a href="https://www.linkedin.com/in/steven-ceballos-le%C3%B3n-485730136/" rel="noopener noreferrer" target="_blank">
+                                    <i className="fa fa-linkedin-square" aria-hidden="true"/>
                                 </a>
 
                                 {/* Freecodecamp */}
