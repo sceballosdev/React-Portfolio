@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Grid, Cell} from 'react-mdl';
 
 import meImage from '../images/me.jpg';
+import Footer from "./Footer";
 
 class Landing extends Component {
     render() {
@@ -48,6 +49,9 @@ class Landing extends Component {
                         </div>
                     </Cell>
                 </Grid>
+
+
+                <Footer/>
             </div>
         )
     }
