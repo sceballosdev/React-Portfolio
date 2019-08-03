@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Grid, Cell} from 'react-mdl';
 
-import meImage from '../images/me.jpg';
-import Footer from "./Footer";
+import meImage from '../../images/me.jpg';
+import Footer from "../Footer/Footer";
 
 class Landing extends Component {
     render() {
@@ -21,7 +21,7 @@ class Landing extends Component {
 
                             <hr/>
 
-                            <p>Java | Kotlin | Firebase | HTML/CSS | JavaScript | React | Redux | NodeJS | Express | MongoDB</p>
+                            <p>Java | Kotlin | Firebase | HTML/CSS | JavaScript | React | Redux | NodeJS | Express | MongoDB </p>
 
                             <div className="social-links">
 

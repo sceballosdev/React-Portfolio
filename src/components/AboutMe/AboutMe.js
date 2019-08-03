@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class About extends Component {
+class AboutMe extends Component {
   render() {
     return(
       <div><h1>Esta es una pagina que va a hablar sobre mi jhfdsjhfg</h1></div>
@@ -9,4 +9,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default AboutMe;
