@@ -12,6 +12,7 @@
 /dist
 /.firebase
 
+
 # misc
 .firebase
 .DS_Store
