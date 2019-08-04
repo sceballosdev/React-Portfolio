@@ -9,6 +9,8 @@
 # production
 /build
 /config
+/dist
+/.firebase
 
 # misc
 .DS_Store
@@ -19,6 +21,7 @@
 /.idea
 .idea
 package-lock.json
+.firebase
 firebase.json
 .firebaserc
 
