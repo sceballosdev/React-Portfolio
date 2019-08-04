@@ -12,9 +12,7 @@
 /dist
 /.firebase
 
-
 # misc
-.firebase
 .DS_Store
 .env.local
 .env.development.local
@@ -23,6 +21,7 @@
 /.idea
 .idea
 package-lock.json
+.firebase
 firebase.json
 .firebaserc
 
