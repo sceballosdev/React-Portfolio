@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Cell, Grid} from 'react-mdl';
-import Footer from "../Footer/Footer";
 
 import {connect} from 'react-redux';
 import {firestoreConnect} from "react-redux-firebase";
@@ -16,8 +15,7 @@ class Landing extends Component {
             <div style={{width: '100%', margin: 'auto'}}>
                 <Grid className="landing-grid">
                     <Cell col={12}>
-
-
+                        
                         {profile && profile.map(data => {
                             return (
                                 <img
@@ -60,9 +58,6 @@ class Landing extends Component {
                         </div>
                     </Cell>
                 </Grid>
-
-
-                <Footer/>
             </div>
         )
     }
