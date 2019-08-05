@@ -3,7 +3,7 @@ import './App.css';
 import {Content, Drawer, Header, Layout, Navigation} from 'react-mdl';
 import Main from '../components/main';
 import {Link} from 'react-router-dom';
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/Footer/FooterOwn";
 
 class App extends Component {
     render() {
