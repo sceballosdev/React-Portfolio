@@ -15,7 +15,7 @@ class Landing extends Component {
             <div style={{width: '100%', margin: 'auto'}}>
                 <Grid className="landing-grid">
                     <Cell col={12}>
-                        
+
                         {profile && profile.map(data => {
                             return (
                                 <img
@@ -25,7 +25,7 @@ class Landing extends Component {
                                     className="avatar-img"
                                 />
                             )
-                        })};
+                        })}
 
                         <div className="banner-text">
 
@@ -33,15 +33,17 @@ class Landing extends Component {
                                 return (
                                     <h1 key={data.id}>{data.position}</h1>
                                 )
-                            })};
+                            })}
 
                             <hr/>
 
-                            {skills && skills.map(skill => {
-                                return (
-                                    <p key={skill.id}>{skill.name} | </p>
-                                )
-                            })};
+                            <p>
+                                {skills && skills.map(skill => {
+                                    return (
+                                        <span key={skill.id}>{skill.name} | </span>
+                                    )
+                                })}
+                            </p>
 
                             <div className="social-links">
 
@@ -52,7 +54,7 @@ class Landing extends Component {
                                             <i className={network.icon} aria-hidden="true"/>
                                         </a>
                                     );
-                                })};
+                                })}
 
                             </div>
                         </div>
