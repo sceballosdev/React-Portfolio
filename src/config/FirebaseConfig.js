@@ -4,13 +4,13 @@ import 'firebase/auth'
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyBihtVJrhHdgGXLpRrTkuPYOcLxNulB4ss",
-    authDomain: "landingpage-d6d60.firebaseapp.com",
-    databaseURL: "https://landingpage-d6d60.firebaseio.com",
-    projectId: "landingpage-d6d60",
-    storageBucket: "landingpage-d6d60.appspot.com",
-    messagingSenderId: "636291141643",
-    appId: "1:636291141643:web:0a9036631cd525b0"
+    apiKey: "AIzaSyAv96P1Lf3KX2c_WZMyOoPx4xurJJy0ak0",
+    authDomain: "stevenceballos-webpage-ddcff.firebaseapp.com",
+    databaseURL: "https://stevenceballos-webpage-ddcff.firebaseio.com",
+    projectId: "stevenceballos-webpage-ddcff",
+    storageBucket: "stevenceballos-webpage-ddcff.appspot.com",
+    messagingSenderId: "984738640918",
+    appId: "1:984738640918:web:7dd720dc8e6eafb1"
 };
 firebase.initializeApp(config);
 
