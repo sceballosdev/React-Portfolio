@@ -5,7 +5,7 @@ function FooterOwn(props) {
     return (
         <Footer size="mini" style={{ backgroundColor: '#223234' }}>
             <p>
-                &copy; Copyright - Steven Ceballos León, Sergio Ramírez Zuluaga. 2019
+                &copy; 2019 Copyright - Steven Ceballos León, Sergio Ramírez Zuluaga.
             </p>
         </Footer>
     );
