@@ -37,8 +37,7 @@ class Landing extends Component {
 
                             <hr/>
 
-                            <p>
-                                {skills && skills.map(skill => {
+                            <p>| {skills && skills.map(skill => {
                                     return (
                                         <span key={skill.id}>{skill.name} | </span>
                                     )

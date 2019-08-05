@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Grid, Cell} from 'react-mdl';
+import {Cell, Grid} from 'react-mdl';
 import Education from '../Education/Education';
 import Experience from '../Experience/Experience';
 import Skills from '../Skills/Skills';
@@ -10,50 +10,79 @@ import {firestoreConnect} from "react-redux-firebase";
 
 
 class Resume extends Component {
-
     render() {
 
         const {profile} = this.props;
+
+        const data = profile && profile[0];
 
         return (
             <div>
                 <Grid>
                     <Cell col={4}>
                         <div style={{textAlign: 'center'}}>
-
                             {profile && profile.map(data => {
                                 return (
                                     <img
                                         src={data.image_profile}
                                         key={data.id}
                                         alt="avatar"
-                                        style={{height: '200px'}}
+                                        style={{height: '300px'}}
                                     />
                                 )
                             })}
                         </div>
 
-                        <h2 style={{paddingTop: '2em'}}>{profile && profile[0].name} {profile && profile[0].last_name}</h2>
-                        <h4 style={{color: 'grey'}}>Programmer</h4>
-                        <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially
-                            unchanged.</p>
-                        <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-                        <h5>Address</h5>
-                        <p>1 Hacker Way Menlo Park, 94025</p>
-                        <h5>Phone</h5>
-                        <p>(123) 456-7890</p>
-                        <h5>Email</h5>
-                        <p>someone@example.com</p>
-                        <h5>Web</h5>
-                        <p>mywebsite.com</p>
-                        <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
+                        {/* Full Name */}
+                        <h2 style={{
+                            paddingTop: '0.5em',
+                            textAlign: 'center'
+                        }}>
+                            {data && data.name} {data && data.last_name}
+                        </h2>
+
+                        {/* Position profile */}
+                        <h4 style={{color: 'grey'}}>
+                            {data && data.position}
+                        </h4>
+
+                        {/* Separator Line */}
+                        <hr style={{borderTop: '3px solid #00A4DF', width: '50%'}}/>
+
+                        {/* About me */}
+                        <p>
+                            {data && data.aboutme}
+                        </p>
+
+                        {/* Separator Line */}
+                        <hr style={{borderTop: '3px solid #00A4DF', width: '50%'}}/>
+
+                        {/* Address */}
+                        <h5>Dirección</h5>
+                        <p>{data && data.address} - {data && data.city}</p>
+
+                        {/* Phone */}
+                        <h5>Celular</h5>
+                        <p>
+                            ({data && data.prefix}) {data && data.phone}
+                        </p>
+
+                        {/* Email */}
+                        <h5>Correo electrónico</h5>
+                        <p>{data && data.email}</p>
+
+                        {/* LinkedIn */}
+                        <h5>LinkedIn</h5>
+                        <p>
+                            mywebsite.com
+                        </p>
+
+                        {/* Separator Line */}
+                        <hr style={{borderTop: '3px solid #00A4DF', width: '50%'}}/>
+                        
                     </Cell>
                     <Cell className="resume-right-col" col={8}>
-                        <h2>Education</h2>
+                        <h2>Educación</h2>
 
 
                         <Education
