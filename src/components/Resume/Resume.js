@@ -12,7 +12,7 @@ import {firestoreConnect} from "react-redux-firebase";
 class Resume extends Component {
     render() {
 
-        const {profile} = this.props;
+        const {profile, skills} = this.props;
 
         const data = profile && profile[0];
 
@@ -52,6 +52,11 @@ class Resume extends Component {
                         {/* About me */}
                         <p>
                             {data && data.aboutme}
+                        </p>
+
+                        {/* About me 2*/}
+                        <p>
+                            {data && data.aboutme2}
                         </p>
 
                         {/* Separator Line */}
@@ -119,22 +124,16 @@ class Resume extends Component {
                         />
                         <hr style={{borderTop: '3px solid #00A4DF'}}/>
                         <h2>Skills</h2>
-                        <Skills
-                            skill="javascript"
-                            progress={100}
-                        />
-                        <Skills
-                            skill="HTML/CSS"
-                            progress={80}
-                        />
-                        <Skills
-                            skill="NodeJS"
-                            progress={50}
-                        />
-                        <Skills
-                            skill="React"
-                            progress={25}
-                        />
+
+                        {skills && skills.map(skill => {
+                            return (
+                                <Skills
+                                    key={skill.id}
+                                    skill={skill.name}
+                                    progress={skill.progress}
+                                />
+                            )
+                        })}
                     </Cell>
                 </Grid>
             </div>
@@ -145,6 +144,7 @@ class Resume extends Component {
 const mapStateToProps = (state) => {
     return {
         profile: state.firestore.ordered.profile,
+        skills: state.firestore.ordered.skills,
     }
 };
 
@@ -153,6 +153,10 @@ export default compose(
     firestoreConnect([
         {
             collection: 'profile'
+        },
+        {
+            collection: 'skills',
+            orderBy: ['progress', 'desc']
         }
     ])
 )(Resume);

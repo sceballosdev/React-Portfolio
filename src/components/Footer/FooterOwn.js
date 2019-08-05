@@ -1,14 +1,38 @@
 import React from 'react';
-import { Footer, FooterSection, FooterLinkList } from 'react-mdl';
+import {Footer} from 'react-mdl';
 
-function FooterOwn(props) {
-    return (
-        <Footer size="mini" style={{ backgroundColor: '#223234' }}>
-            <p>
-                &copy; 2019 Copyright - Steven Ceballos León, Sergio Ramírez Zuluaga.
-            </p>
-        </Footer>
-    );
+import {compose} from "redux";
+import {connect} from "react-redux";
+import {firestoreConnect} from "react-redux-firebase";
+
+class FooterOwn extends React.Component {
+
+    render() {
+
+        const {profile} = this.props;
+        const data = profile && profile[0];
+
+        return (
+            <Footer size="mini" style={{backgroundColor: '#223234'}}>
+                <p>
+                    &copy; Steven Ceballos León - Sergio Ramírez Zuluaga 2019 > {data && data.city},{data && data.country} > {data && data.email}
+                </p>
+            </Footer>
+        )
+    }
 }
 
-export default FooterOwn;
+const mapStateToProps = (state) => {
+    return {
+        profile: state.firestore.ordered.profile,
+    }
+};
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        {
+            collection: 'profile'
+        }
+    ])
+)(FooterOwn);

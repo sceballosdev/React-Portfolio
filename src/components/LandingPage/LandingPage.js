@@ -11,6 +11,8 @@ class Landing extends Component {
 
         const {profile, skills, social_networks} = this.props;
 
+        const data = profile && profile[0];
+
         return (
             <div style={{width: '100%', margin: 'auto'}}>
                 <Grid className="landing-grid">
@@ -56,6 +58,8 @@ class Landing extends Component {
                                 })}
 
                             </div>
+
+                            <p>@{data && data.nickname}</p>
                         </div>
                     </Cell>
                 </Grid>
