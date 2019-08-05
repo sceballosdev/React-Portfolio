@@ -79,7 +79,7 @@ class Resume extends Component {
 
                         {/* Separator Line */}
                         <hr style={{borderTop: '3px solid #00A4DF', width: '50%'}}/>
-                        
+
                     </Cell>
                     <Cell className="resume-right-col" col={8}>
                         <h2>Educación</h2>
