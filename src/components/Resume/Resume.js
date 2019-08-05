@@ -72,9 +72,9 @@ class Resume extends Component {
                         <p>{data && data.email}</p>
 
                         {/* LinkedIn */}
-                        <h5>LinkedIn</h5>
+                        <h5>Página Web</h5>
                         <p>
-                            mywebsite.com
+                            {data && data.website}
                         </p>
 
                         {/* Separator Line */}
@@ -98,7 +98,9 @@ class Resume extends Component {
                             schoolName="My 2nd University"
                             schoolDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
                         />
-                        <hr style={{borderTop: '3px solid #e22947'}}/>
+
+
+                        <hr style={{borderTop: '3px solid #00A4DF'}}/>
 
                         <h2>Experience</h2>
 
@@ -115,7 +117,7 @@ class Resume extends Component {
                             jobName="Second Job"
                             jobDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
                         />
-                        <hr style={{borderTop: '3px solid #e22947'}}/>
+                        <hr style={{borderTop: '3px solid #00A4DF'}}/>
                         <h2>Skills</h2>
                         <Skills
                             skill="javascript"
