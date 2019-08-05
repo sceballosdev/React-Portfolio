@@ -25,6 +25,7 @@ package-lock.json
 .firebase
 firebase.json
 .firebaserc
+FirebaseConfig.js
 
 npm-debug.log*
 yarn-debug.log*
