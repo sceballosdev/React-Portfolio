@@ -3,7 +3,7 @@ import './App.css';
 import {Content, Drawer, Header, Layout, Navigation} from 'react-mdl';
 import Main from '../components/main';
 import {Link} from 'react-router-dom';
-import Footer from "../components/Footer/FooterOwn";
+import FooterOwn from "../components/Footer/FooterOwn";
 
 class App extends Component {
     render() {
@@ -34,7 +34,7 @@ class App extends Component {
                         <div className="page-content"/>
                         <Main/>
                     </Content>
-                    <Footer/>
+                    <FooterOwn />
                 </Layout>
             </div>
 
