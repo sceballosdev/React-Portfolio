@@ -4,22 +4,36 @@ import Education from '../Education/Education';
 import Experience from '../Experience/Experience';
 import Skills from '../Skills/Skills';
 
+import {compose} from "redux";
+import {connect} from "react-redux";
+import {firestoreConnect} from "react-redux-firebase";
+
 
 class Resume extends Component {
+
     render() {
+
+        const {profile} = this.props;
+
         return (
             <div>
                 <Grid>
                     <Cell col={4}>
                         <div style={{textAlign: 'center'}}>
-                            <img
-                                src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
-                                alt="avatar"
-                                style={{height: '200px'}}
-                            />
+
+                            {profile && profile.map(data => {
+                                return (
+                                    <img
+                                        src={data.image_profile}
+                                        key={data.id}
+                                        alt="avatar"
+                                        style={{height: '200px'}}
+                                    />
+                                )
+                            })}
                         </div>
 
-                        <h2 style={{paddingTop: '2em'}}>Paul Hanna</h2>
+                        <h2 style={{paddingTop: '2em'}}>{profile && profile[0].name} {profile && profile[0].last_name}</h2>
                         <h4 style={{color: 'grey'}}>Programmer</h4>
                         <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
@@ -97,4 +111,17 @@ class Resume extends Component {
     }
 }
 
-export default Resume;
+const mapStateToProps = (state) => {
+    return {
+        profile: state.firestore.ordered.profile,
+    }
+};
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        {
+            collection: 'profile'
+        }
+    ])
+)(Resume);
